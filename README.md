@@ -1,8 +1,12 @@
 # Coinbase Wallet Clone
 
-A Flutter project.
+This is a cloned version of Coinbase Wallet mobile app
 
 ## Getting Started
 
-1. Clone it
-2. Run
+In the command terminal, run the following commands:
+
+    $ git clone https://github.com/phvtquang/Coinbase_Wallet
+    $ cd coinbaseclone/
+    $ flutter pub get
+    $ flutter run

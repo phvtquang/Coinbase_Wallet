@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:coinbaseclone/screens/signInWithRecoveryPhrase_screen/SignInWithRecoveryPhrase.dart';
 import 'package:flutter/material.dart';
 import 'package:coinbaseclone/constant.dart';
