@@ -1,5 +1,6 @@
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/main_screen/main_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -13,7 +14,7 @@ class pinCodeScreen extends StatefulWidget {
 // ignore: camel_case_types
 class _pinCodeScreenState extends State<pinCodeScreen> {
   String currentPass = "";
-  String rightPass = "250202";
+  String rightPass = "55588";
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +97,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -116,7 +117,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -136,7 +137,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -160,7 +161,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -180,7 +181,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -200,7 +201,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -220,7 +221,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -244,7 +245,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -264,7 +265,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
@@ -284,12 +285,12 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = ""; 
+                          currentPass = "";
                         }
                       });
                     },

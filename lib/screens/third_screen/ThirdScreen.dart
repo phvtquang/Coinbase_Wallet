@@ -1,4 +1,5 @@
 import 'package:coinbaseclone/screens/fourth_screen/FourthScreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../constant.dart';
 
@@ -103,7 +104,7 @@ class ThirdScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              CupertinoPageRoute(
                                 builder: (context) => const FourthScreen(),
                               ),
                             );

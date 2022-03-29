@@ -1,6 +1,7 @@
 import 'package:coinbaseclone/components/primaryButton.dart';
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SignInWithRecoveryPhrase extends StatelessWidget {
@@ -99,7 +100,7 @@ class SignInWithRecoveryPhrase extends StatelessWidget {
               press: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  CupertinoPageRoute(
                     builder: (context) => const ProtectWallet(),
                   ),
                 );

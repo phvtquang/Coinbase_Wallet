@@ -3,6 +3,7 @@ import 'package:coinbaseclone/components/primaryButton.dart';
 import 'package:coinbaseclone/screens/restoreWallet_screen/RestoreWalletScreen.dart';
 import 'package:coinbaseclone/screens/second_screen/SecondScreen.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -34,7 +35,7 @@ class FirstScreen extends StatelessWidget {
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                CupertinoPageRoute(
                   builder: (context) => const SecondScreen(),
                 ),
               );
@@ -68,7 +69,7 @@ class FirstScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  CupertinoPageRoute(
                     builder: (context) => const RestoreWallet(),
                   ),
                 );

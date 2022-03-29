@@ -1,5 +1,6 @@
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/pin_code_screen/pincode_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProtectWallet extends StatelessWidget {
@@ -94,7 +95,7 @@ class ProtectWallet extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    CupertinoPageRoute(
                       builder: (context) => const pinCodeScreen(),
                     ),
                   );

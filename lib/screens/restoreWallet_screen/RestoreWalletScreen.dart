@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:coinbaseclone/screens/signInWithRecoveryPhrase_screen/SignInWithRecoveryPhrase.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:coinbaseclone/constant.dart';
 
@@ -100,7 +101,7 @@ class RestoreWallet extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      CupertinoPageRoute(
                         builder: (context) => const SignInWithRecoveryPhrase(),
                       ),
                     );
