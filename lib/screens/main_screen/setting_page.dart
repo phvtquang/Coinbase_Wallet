@@ -6,7 +6,7 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
 
     return Column(
       children: [
@@ -16,7 +16,7 @@ class SettingPage extends StatelessWidget {
           color: kPrimaryColor,
           child: const Center(
             child: Text(
-              "Settings",
+              'Settings',
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),

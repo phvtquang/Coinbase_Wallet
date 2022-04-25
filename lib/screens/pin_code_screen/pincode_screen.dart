@@ -1,6 +1,7 @@
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/main_screen/main_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -13,14 +14,13 @@ class pinCodeScreen extends StatefulWidget {
 
 // ignore: camel_case_types
 class _pinCodeScreenState extends State<pinCodeScreen> {
-  String currentPass = "";
-  String rightPass = "55588";
+  String currentPass = '';
+  String rightPass = '000111';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
@@ -31,7 +31,6 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
               left: MediaQuery.of(context).size.width * 0.01,
             ),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
                   icon: const Icon(Icons.arrow_back),
@@ -41,7 +40,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                 ),
                 const Spacer(),
                 const Text(
-                  "Create PIN",
+                  'Create PIN',
                   style: TextStyle(
                     fontSize: 18,
                   ),
@@ -87,13 +86,15 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
             children: [
               Column(
                 children: [
-                  keypad_button(
-                    insideText: "1",
+                  KeypadButton(
+                    insideText: '1',
                     numberColor: Colors.black,
                     press: () {
                       setState(() {
-                        currentPass += "1";
-                        print(currentPass);
+                        currentPass += '1';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
@@ -102,18 +103,20 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = "";
+                          currentPass = '';
                         }
                       });
                     },
                   ),
-                  keypad_button(
-                    insideText: "4",
+                  KeypadButton(
+                    insideText: '4',
                     numberColor: Colors.black,
                     press: () {
                       setState(() {
-                        currentPass += "4";
-                        print(currentPass);
+                        currentPass += '4';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
@@ -122,42 +125,20 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = "";
+                          currentPass = '';
                         }
                       });
                     },
                   ),
-                  keypad_button(
-                    insideText: "7",
+                  KeypadButton(
+                    insideText: '7',
                     numberColor: Colors.black,
                     press: () {
                       setState(() {
-                        currentPass += "7";
-                        print(currentPass);
-                        if (currentPass == rightPass) {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) => const MainScreen(),
-                            ),
-                          );
-                        } else if (currentPass.length == 6) {
-                          currentPass = "";
+                        currentPass += '7';
+                        if (kDebugMode) {
+                          print(currentPass);
                         }
-                      });
-                    },
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  keypad_button(
-                    insideText: "2",
-                    numberColor: Colors.black,
-                    press: () {
-                      setState(() {
-                        currentPass += "2";
-                        print(currentPass);
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
@@ -166,67 +147,7 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = "";
-                        }
-                      });
-                    },
-                  ),
-                  keypad_button(
-                    insideText: "5",
-                    numberColor: Colors.black,
-                    press: () {
-                      setState(() {
-                        currentPass += "5";
-                        print(currentPass);
-                        if (currentPass == rightPass) {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) => const MainScreen(),
-                            ),
-                          );
-                        } else if (currentPass.length == 6) {
-                          currentPass = "";
-                        }
-                      });
-                    },
-                  ),
-                  keypad_button(
-                    insideText: "8",
-                    numberColor: Colors.black,
-                    press: () {
-                      setState(() {
-                        currentPass += "8";
-                        print(currentPass);
-                        if (currentPass == rightPass) {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) => const MainScreen(),
-                            ),
-                          );
-                        } else if (currentPass.length == 6) {
-                          currentPass = "";
-                        }
-                      });
-                    },
-                  ),
-                  keypad_button(
-                    insideText: "0",
-                    numberColor: Colors.black,
-                    press: () {
-                      setState(() {
-                        currentPass += "0";
-                        print(currentPass);
-                        if (currentPass == rightPass) {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) => const MainScreen(),
-                            ),
-                          );
-                        } else if (currentPass.length == 6) {
-                          currentPass = "";
+                          currentPass = '';
                         }
                       });
                     },
@@ -235,13 +156,15 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
               ),
               Column(
                 children: [
-                  keypad_button(
-                    insideText: "3",
+                  KeypadButton(
+                    insideText: '2',
                     numberColor: Colors.black,
                     press: () {
                       setState(() {
-                        currentPass += "3";
-                        print(currentPass);
+                        currentPass += '2';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
@@ -250,18 +173,20 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = "";
+                          currentPass = '';
                         }
                       });
                     },
                   ),
-                  keypad_button(
-                    insideText: "6",
+                  KeypadButton(
+                    insideText: '5',
                     numberColor: Colors.black,
                     press: () {
                       setState(() {
-                        currentPass += "6";
-                        print(currentPass);
+                        currentPass += '5';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
@@ -270,18 +195,20 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = "";
+                          currentPass = '';
                         }
                       });
                     },
                   ),
-                  keypad_button(
-                    insideText: "9",
+                  KeypadButton(
+                    insideText: '8',
                     numberColor: Colors.black,
                     press: () {
                       setState(() {
-                        currentPass += "9";
-                        print(currentPass);
+                        currentPass += '8';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
@@ -290,13 +217,105 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
                             ),
                           );
                         } else if (currentPass.length == 6) {
-                          currentPass = "";
+                          currentPass = '';
                         }
                       });
                     },
                   ),
-                  keypad_button(
-                    insideText: "<",
+                  KeypadButton(
+                    insideText: '0',
+                    numberColor: Colors.black,
+                    press: () {
+                      setState(() {
+                        currentPass += '0';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
+                        if (currentPass == rightPass) {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const MainScreen(),
+                            ),
+                          );
+                        } else if (currentPass.length == 6) {
+                          currentPass = '';
+                        }
+                      });
+                    },
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  KeypadButton(
+                    insideText: '3',
+                    numberColor: Colors.black,
+                    press: () {
+                      setState(() {
+                        currentPass += '3';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
+                        if (currentPass == rightPass) {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const MainScreen(),
+                            ),
+                          );
+                        } else if (currentPass.length == 6) {
+                          currentPass = '';
+                        }
+                      });
+                    },
+                  ),
+                  KeypadButton(
+                    insideText: '6',
+                    numberColor: Colors.black,
+                    press: () {
+                      setState(() {
+                        currentPass += '6';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
+                        if (currentPass == rightPass) {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const MainScreen(),
+                            ),
+                          );
+                        } else if (currentPass.length == 6) {
+                          currentPass = '';
+                        }
+                      });
+                    },
+                  ),
+                  KeypadButton(
+                    insideText: '9',
+                    numberColor: Colors.black,
+                    press: () {
+                      setState(() {
+                        currentPass += '9';
+                        if (kDebugMode) {
+                          print(currentPass);
+                        }
+                        if (currentPass == rightPass) {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const MainScreen(),
+                            ),
+                          );
+                        } else if (currentPass.length == 6) {
+                          currentPass = '';
+                        }
+                      });
+                    },
+                  ),
+                  KeypadButton(
+                    insideText: '<',
                     numberColor: Colors.black,
                     press: () {
                       setState(
@@ -322,8 +341,8 @@ class _pinCodeScreenState extends State<pinCodeScreen> {
   }
 }
 
-class keypad_button extends StatelessWidget {
-  const keypad_button({
+class KeypadButton extends StatelessWidget {
+  const KeypadButton({
     Key? key,
     required this.press,
     required this.insideText,

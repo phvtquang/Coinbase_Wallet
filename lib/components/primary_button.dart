@@ -28,20 +28,20 @@ class primaryButton extends StatelessWidget {
       height: buttonHeight,
       child: ElevatedButton(
         onPressed: press,
-        child: Text(
-          insideText,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-            color: textColor,
-          ),
-        ),
         style: ElevatedButton.styleFrom(
           primary: backgroundColor,
           shadowColor: Colors.transparent,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+        ),
+        child: Text(
+          insideText,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: textColor,
           ),
         ),
       ),

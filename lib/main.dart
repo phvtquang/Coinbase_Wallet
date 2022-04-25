@@ -1,14 +1,25 @@
 import 'package:coinbaseclone/constant.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screens/first_screen/FirstScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+import 'screens/first_screen/FirstScreen.dart';
+
+Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ),
+  );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp().whenComplete(
+    () {
+      if (kDebugMode) {
+        print('completed');
+      }
+    },
   );
   runApp(const CoinbaseClone());
 }

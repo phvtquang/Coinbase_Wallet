@@ -1,13 +1,7 @@
-import 'dart:async';
-import 'dart:convert';
-
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/main_screen/browser_page.dart';
 import 'package:coinbaseclone/screens/main_screen/setting_page.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-
-import 'coinDetail.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -70,9 +64,8 @@ class WalletPage extends StatelessWidget {
           color: kPrimaryColor,
           height: MediaQuery.of(context).size.height * 0.43,
         ),
-        const Align(
-          alignment: Alignment.center,
-          child: mainTab(),
+        const Center(
+          child: MainTab(),
         ),
         const Positioned(
           right: 25,
@@ -90,17 +83,17 @@ class WalletPage extends StatelessWidget {
   }
 }
 
-class mainTab extends StatefulWidget {
-  const mainTab({
+class MainTab extends StatefulWidget {
+  const MainTab({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<mainTab> createState() => _mainTabState();
+  State<MainTab> createState() => _MainTabState();
 }
 
-class _mainTabState extends State<mainTab>
-    with AutomaticKeepAliveClientMixin<mainTab> {
+class _MainTabState extends State<MainTab>
+    with AutomaticKeepAliveClientMixin<MainTab> {
   @override
   bool get wantKeepAlive => true; // ** and here
 
@@ -117,14 +110,14 @@ class _mainTabState extends State<mainTab>
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
               const Text(
-                "@Feb25",
+                '@Feb25',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                 ),
               ),
               const Text(
-                "\$3,429.24",
+                r'$3,429.24',
                 style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
@@ -144,7 +137,7 @@ class _mainTabState extends State<mainTab>
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
                     Text(
-                      "  Send",
+                      '  Send',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white,
@@ -158,7 +151,7 @@ class _mainTabState extends State<mainTab>
                       endIndent: 10,
                     ),
                     Text(
-                      "Receive",
+                      'Receive',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white,
@@ -172,7 +165,7 @@ class _mainTabState extends State<mainTab>
                       endIndent: 10,
                     ),
                     Text(
-                      "Trade  ",
+                      'Trade  ',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white,
@@ -204,15 +197,15 @@ class _mainTabState extends State<mainTab>
                   unselectedLabelColor: Colors.grey,
                   indicator: UnderlineTabIndicator(
                     borderSide: BorderSide(
-                      width: 4.0,
+                      width: 4,
                       color: kPrimaryColor,
                     ),
-                    insets: EdgeInsets.symmetric(horizontal: 16.0),
+                    insets: EdgeInsets.symmetric(horizontal: 16),
                   ),
                   tabs: [
                     Tab(
                       child: Text(
-                        "Coins",
+                        'Coins',
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -220,7 +213,7 @@ class _mainTabState extends State<mainTab>
                     ),
                     Tab(
                       child: Text(
-                        "NFTs",
+                        'NFTs',
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -239,15 +232,15 @@ class _mainTabState extends State<mainTab>
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: 20,
                             ),
-                            const Text("ACTIONS"),
+                            const Text('ACTIONS'),
                             ListView.builder(
                               itemBuilder: (context, index) {
                                 return const ListTile(
                                   leading: CircleAvatar(
                                     backgroundColor: Colors.amber,
                                   ),
-                                  title: Text("Buy, transfer or convert"),
-                                  subtitle: Text("From Coinbase or else where"),
+                                  title: Text('Buy, transfer or convert'),
+                                  subtitle: Text('From Coinbase or else where'),
                                 );
                               },
                               shrinkWrap: true,
@@ -255,15 +248,15 @@ class _mainTabState extends State<mainTab>
                               padding: const EdgeInsets.all(0),
                               physics: const NeverScrollableScrollPhysics(),
                             ),
-                            const Text("BALANCE"),
+                            const Text('BALANCE'),
                             ListView.builder(
                               itemBuilder: (context, index) {
                                 return const ListTile(
                                   leading: CircleAvatar(
                                     backgroundColor: Colors.amber,
                                   ),
-                                  title: Text("Buy, transfer or convert"),
-                                  subtitle: Text("From Coinbase or else where"),
+                                  title: Text('Buy, transfer or convert'),
+                                  subtitle: Text('From Coinbase or else where'),
                                 );
                               },
                               shrinkWrap: true,

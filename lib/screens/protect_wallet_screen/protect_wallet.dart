@@ -8,7 +8,7 @@ class ProtectWallet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(
@@ -20,7 +20,7 @@ class ProtectWallet extends StatelessWidget {
           children: [
             const Spacer(),
             const Text(
-              "Protect your wallet",
+              'Protect your wallet',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class ProtectWallet extends StatelessWidget {
               height: size.height * 0.01,
             ),
             const Text(
-              "Add an extra layer of security to keep your crypto safe.",
+              'Add an extra layer of security to keep your crypto safe.',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
@@ -43,6 +43,11 @@ class ProtectWallet extends StatelessWidget {
               height: 80,
               child: OutlinedButton(
                 onPressed: () {},
+                style: OutlinedButton.styleFrom(
+                  elevation: 0,
+                  primary: Colors.black,
+                  shadowColor: Colors.transparent,
+                ),
                 child: Row(
                   children: [
                     const Icon(
@@ -56,14 +61,14 @@ class ProtectWallet extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            "Use Fingerprint",
+                            'Use Fingerprint',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
                           Text(
-                            "Recommended",
+                            'Recommended',
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -78,11 +83,6 @@ class ProtectWallet extends StatelessWidget {
                       Icons.keyboard_arrow_right,
                     ),
                   ],
-                ),
-                style: OutlinedButton.styleFrom(
-                  elevation: 0,
-                  primary: Colors.black,
-                  shadowColor: Colors.transparent,
                 ),
               ),
             ),
@@ -100,6 +100,11 @@ class ProtectWallet extends StatelessWidget {
                     ),
                   );
                 },
+                style: OutlinedButton.styleFrom(
+                  elevation: 0,
+                  primary: Colors.black,
+                  shadowColor: Colors.transparent,
+                ),
                 child: Row(
                   children: [
                     const Icon(
@@ -113,7 +118,7 @@ class ProtectWallet extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            "Create PIN",
+                            'Create PIN',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.normal,
@@ -127,11 +132,6 @@ class ProtectWallet extends StatelessWidget {
                       Icons.keyboard_arrow_right,
                     ),
                   ],
-                ),
-                style: OutlinedButton.styleFrom(
-                  elevation: 0,
-                  primary: Colors.black,
-                  shadowColor: Colors.transparent,
                 ),
               ),
             ),

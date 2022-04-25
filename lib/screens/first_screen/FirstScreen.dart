@@ -1,8 +1,7 @@
-// ignore: file_names
-import 'package:coinbaseclone/components/primaryButton.dart';
-import 'package:coinbaseclone/screens/restoreWallet_screen/RestoreWalletScreen.dart';
-import 'package:coinbaseclone/screens/second_screen/SecondScreen.dart';
+import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/screens/restoreWallet_screen/RestoreWalletScreen.dart';
+import 'package:coinbaseclone/screens/second_screen/LegalScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,14 +28,14 @@ class FirstScreen extends StatelessWidget {
           primaryButton(
             buttonHeight: 50,
             buttonWidth: MediaQuery.of(context).size.width * 0.9,
-            insideText: "Create a new wallet",
+            insideText: 'Create a new wallet',
             textColor: Colors.white,
             backgroundColor: kPrimaryColor,
             press: () {
               Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => const SecondScreen(),
+                  builder: (context) => const LegalScreen(),
                 ),
               );
             },
@@ -74,17 +73,17 @@ class FirstScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text(
-                "I already have a wallet",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 onPrimary: kPrimaryColor,
                 shadowColor: Colors.transparent,
+              ),
+              child: const Text(
+                'I already have a wallet',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ),
           ),

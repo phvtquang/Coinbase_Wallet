@@ -1,7 +1,10 @@
-import 'package:coinbaseclone/screens/fourth_screen/FourthScreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/screens/set_privacy/set_privacy.dart';
+import 'package:coinbaseclone/user_details.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../constant.dart';
 
 class ThirdScreen extends StatelessWidget {
   const ThirdScreen({Key? key}) : super(key: key);
@@ -72,80 +75,174 @@ class ThirdScreen extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Padding(
-            padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * 0.05,
-              right: MediaQuery.of(context).size.width * 0.05,
-            ),
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    const TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 249, 249, 249),
-                        hintText: '@',
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        child: ElevatedButton(
-                          child: const Text(
-                            'Next',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
+          const usernameInputBox(),
+        ],
+      ),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class usernameInputBox extends StatefulWidget {
+  const usernameInputBox({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<usernameInputBox> createState() => _usernameInputBoxState();
+}
+
+// ignore: camel_case_types
+class _usernameInputBoxState extends State<usernameInputBox> {
+  Future<String> checkUser(String username) async {
+    try {
+      // Get reference to Firestore collection
+      final collectionRef = FirebaseFirestore.instance.collection('userlist');
+      final doc = await collectionRef.doc(username).get();
+      if (kDebugMode) {
+        print(doc.data());
+      }
+      if (doc.exists) {
+        return 'UsernameExist';
+      } else {
+        return 'UsernameAvailable';
+      }
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  final TextEditingController usernameTextFieldController =
+      TextEditingController();
+
+  String usernameAvailability = 'UsernameBlank';
+
+  String finalizeResult(String input) {
+    if (input == 'UsernameBlank') {
+      return 'Username cannot be blank';
+    }
+    if (input == 'UsernameExist') {
+      return 'Not available';
+    }
+    if (input == 'UsernameAvailable') {
+      return 'Available';
+    }
+    return 'LOL';
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    usernameTextFieldController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: MediaQuery.of(context).size.width * 0.05,
+        right: MediaQuery.of(context).size.width * 0.05,
+      ),
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              TextField(
+                onChanged: (String value) async {
+                  final String getUsernameAvailability =
+                      await checkUser(usernameTextFieldController.text);
+                  if (usernameTextFieldController.text.isEmpty) {
+                    setState(() {
+                      usernameAvailability = 'UsernameBlank';
+                    });
+                    return;
+                  } else {
+                    setState(() {
+                      usernameAvailability = getUsernameAvailability;
+                    });
+                  }
+                },
+                controller: usernameTextFieldController,
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 249, 249, 249),
+                  hintText: '@',
+                ),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  child: ElevatedButton(
+                    onPressed: usernameAvailability == 'UsernameBlank' ||
+                            usernameAvailability == 'UsernameExist'
+                        ? null
+                        : () async {
+                            if (await checkUser(
+                                    usernameTextFieldController.text) !=
+                                'UsernameAvailable') {
+                              return;
+                            }
+                            signupUserDetails.username =
+                                usernameTextFieldController.text;
+                            await Navigator.push(
                               context,
                               CupertinoPageRoute(
                                 builder: (context) => const FourthScreen(),
                               ),
                             );
                           },
-                          style: ElevatedButton.styleFrom(
-                            primary: kPrimaryColor,
-                            shadowColor: Colors.transparent,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(15), // <-- Radius
-                            ),
-                          ),
-                        ),
+                    style: ElevatedButton.styleFrom(
+                      primary: kPrimaryColor,
+                      shadowColor: Colors.transparent,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15), // <-- Radius
                       ),
                     ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.check_circle,
-                        color: Colors.green,
+                    child: const Text(
+                      'Next',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Available',
-                        style: TextStyle(
-                          color: Colors.green,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                )
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 16, bottom: 16),
+            child: Row(
+              children: [
+                Icon(
+                  usernameAvailability == 'UsernameBlank' ||
+                          usernameAvailability == 'UsernameExist'
+                      ? Icons.warning
+                      : Icons.check_circle,
+                  color: usernameAvailability == 'UsernameBlank' ||
+                          usernameAvailability == 'UsernameExist'
+                      ? Colors.red
+                      : Colors.green,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  finalizeResult(usernameAvailability),
+                  style: TextStyle(
+                    color: usernameAvailability == 'UsernameBlank' ||
+                            usernameAvailability == 'UsernameExist'
+                        ? Colors.red
+                        : Colors.green,
+                  ),
+                ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );

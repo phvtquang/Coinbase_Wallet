@@ -1,4 +1,4 @@
-import 'package:coinbaseclone/components/primaryButton.dart';
+import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
 import 'package:flutter/cupertino.dart';
@@ -46,21 +46,21 @@ class SignInWithRecoveryPhrase extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Sign in with a recovery phrase",
+                  'Sign in with a recovery phrase',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 26,
                   ),
                 ),
                 const Text(
-                  "This is a 12 word phrase you were given when you created previous wallet.",
+                  'This is a 12 word phrase you were given when you created previous wallet.',
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 16,
                   ),
                 ),
                 const Text(
-                  "Learn more.",
+                  'Learn more.',
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 16,
@@ -92,7 +92,7 @@ class SignInWithRecoveryPhrase extends StatelessWidget {
               bottom: MediaQuery.of(context).size.height * 0.02,
             ),
             child: primaryButton(
-              insideText: "Next",
+              insideText: 'Next',
               backgroundColor: kPrimaryColor,
               buttonHeight: 50,
               buttonWidth: MediaQuery.of(context).size.width,

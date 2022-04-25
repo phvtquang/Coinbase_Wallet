@@ -1,9 +1,36 @@
-import 'package:coinbaseclone/components/primaryButton.dart';
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
+import 'package:coinbaseclone/user_details.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+bool public = true;
 
 class FourthScreen extends StatelessWidget {
   const FourthScreen({Key? key}) : super(key: key);
+
+  Future<void> registerUser(UserDetails user) async {
+    final collectionRef = FirebaseFirestore.instance.collection('userlist');
+    await collectionRef.doc(user.username).set({
+      'btcwallet': '1azxcdwfwcqwqwe',
+      'public': user.public,
+    }).then(
+      (value) {
+        if (kDebugMode) {
+          print('OK');
+        }
+      },
+    ).catchError(
+      (onError) {
+        if (kDebugMode) {
+          print(onError.toString());
+        }
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +109,21 @@ class FourthScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: primaryButton(
-                      insideText: "Next",
+                      insideText: 'Next',
                       backgroundColor: kPrimaryColor,
                       buttonHeight: 50,
                       buttonWidth: MediaQuery.of(context).size.width,
                       textColor: Colors.white,
-                      press: () {}),
+                      press: () async {
+                        signupUserDetails.public = public;
+                        await registerUser(signupUserDetails);
+                        await Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => const ProtectWallet(),
+                          ),
+                        );
+                      }),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
@@ -109,8 +145,6 @@ class ChoosePrivacySettings extends StatefulWidget {
 }
 
 class _ChoosePrivacySettingsState extends State<ChoosePrivacySettings> {
-  bool privacy = true;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -123,13 +157,19 @@ class _ChoosePrivacySettingsState extends State<ChoosePrivacySettings> {
             child: OutlinedButton(
               onPressed: () {
                 setState(() {
-                  if (!privacy) {
-                    privacy = true;
+                  if (!public) {
+                    public = true;
                   }
                 });
               },
+              style: OutlinedButton.styleFrom(
+                  elevation: 0,
+                  primary: Colors.black,
+                  shadowColor: Colors.transparent,
+                  side: BorderSide(
+                    color: public ? kPrimaryColor : Colors.grey,
+                  )),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Flexible(
                     flex: 9,
@@ -168,21 +208,13 @@ class _ChoosePrivacySettingsState extends State<ChoosePrivacySettings> {
                     ),
                   ),
                   Flexible(
-                    flex: 1,
                     child: Icon(
                       Icons.remove_red_eye,
-                      color: privacy ? kPrimaryColor : Colors.grey,
+                      color: public ? kPrimaryColor : Colors.grey,
                     ),
                   ),
                 ],
               ),
-              style: OutlinedButton.styleFrom(
-                  elevation: 0,
-                  primary: Colors.black,
-                  shadowColor: Colors.transparent,
-                  side: BorderSide(
-                    color: privacy ? kPrimaryColor : Colors.grey,
-                  )),
             ),
           ),
         ),
@@ -191,20 +223,26 @@ class _ChoosePrivacySettingsState extends State<ChoosePrivacySettings> {
           height: MediaQuery.of(context).size.height * 0.02,
         ),
         Center(
-          // Public Button
+          // Private Button
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 100,
             child: OutlinedButton(
               onPressed: () {
                 setState(() {
-                  if (privacy) {
-                    privacy = false;
+                  if (public) {
+                    public = false;
                   }
                 });
               },
+              style: OutlinedButton.styleFrom(
+                  elevation: 0,
+                  primary: Colors.black,
+                  shadowColor: Colors.transparent,
+                  side: BorderSide(
+                    color: !public ? kPrimaryColor : Colors.grey,
+                  )),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Flexible(
                     flex: 9,
@@ -235,21 +273,13 @@ class _ChoosePrivacySettingsState extends State<ChoosePrivacySettings> {
                     ),
                   ),
                   Flexible(
-                    flex: 1,
                     child: Icon(
                       Icons.privacy_tip,
-                      color: !privacy ? kPrimaryColor : Colors.grey,
+                      color: !public ? kPrimaryColor : Colors.grey,
                     ),
                   ),
                 ],
               ),
-              style: OutlinedButton.styleFrom(
-                  elevation: 0,
-                  primary: Colors.black,
-                  shadowColor: Colors.transparent,
-                  side: BorderSide(
-                    color: !privacy ? kPrimaryColor : Colors.grey,
-                  )),
             ),
           ),
         ),

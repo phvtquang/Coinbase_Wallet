@@ -1,8 +1,7 @@
-// ignore: file_names
+import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/signInWithRecoveryPhrase_screen/SignInWithRecoveryPhrase.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:coinbaseclone/constant.dart';
 
 class RestoreWallet extends StatelessWidget {
   const RestoreWallet({Key? key}) : super(key: key);
@@ -74,19 +73,19 @@ class RestoreWallet extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text(
-                    'Restore from Google Drive',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
                   style: ElevatedButton.styleFrom(
                     primary: kPrimaryColor,
                     shadowColor: Colors.transparent,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15), // <-- Radius
+                    ),
+                  ),
+                  child: const Text(
+                    'Restore from Google Drive',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
                 ),
@@ -106,17 +105,17 @@ class RestoreWallet extends StatelessWidget {
                       ),
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    onPrimary: kPrimaryColor,
+                    shadowColor: Colors.transparent,
+                  ),
                   child: const Text(
                     'Restore with recovery phrase',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    onPrimary: kPrimaryColor,
-                    shadowColor: Colors.transparent,
                   ),
                 ),
               ),
