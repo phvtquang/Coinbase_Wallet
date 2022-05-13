@@ -1,8 +1,5 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
 class primaryButton extends StatelessWidget {
   const primaryButton({
     Key? key,

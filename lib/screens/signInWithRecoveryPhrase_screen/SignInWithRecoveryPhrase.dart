@@ -1,12 +1,25 @@
 import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
+import 'package:coinbaseclone/service/BlockchainService.dart';
+import 'package:coinbaseclone/service/CurrentWallet.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class SignInWithRecoveryPhrase extends StatelessWidget {
+class SignInWithRecoveryPhrase extends StatefulWidget {
   const SignInWithRecoveryPhrase({Key? key}) : super(key: key);
 
+  @override
+  State<SignInWithRecoveryPhrase> createState() =>
+      _SignInWithRecoveryPhraseState();
+}
+
+class _SignInWithRecoveryPhraseState extends State<SignInWithRecoveryPhrase> {
+  final TextEditingController recoveryPhraseTextFiledController =
+      TextEditingController();
+
+  bool isloading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,11 +83,12 @@ class SignInWithRecoveryPhrase extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.04,
                 ),
-                const TextField(
+                TextField(
                   keyboardType: TextInputType.multiline,
                   minLines: 5,
                   maxLines: null,
-                  decoration: InputDecoration(
+                  controller: recoveryPhraseTextFiledController,
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     filled: true,
                     fillColor: Color.fromARGB(255, 249, 249, 249),
@@ -91,21 +105,48 @@ class SignInWithRecoveryPhrase extends StatelessWidget {
               right: MediaQuery.of(context).size.width * 0.05,
               bottom: MediaQuery.of(context).size.height * 0.02,
             ),
-            child: primaryButton(
-              insideText: 'Next',
-              backgroundColor: kPrimaryColor,
-              buttonHeight: 50,
-              buttonWidth: MediaQuery.of(context).size.width,
-              textColor: Colors.white,
-              press: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => const ProtectWallet(),
+            child: !isloading
+                ? primaryButton(
+                    insideText: 'Next',
+                    backgroundColor: kPrimaryColor,
+                    buttonHeight: 50,
+                    buttonWidth: MediaQuery.of(context).size.width,
+                    textColor: Colors.white,
+                    press: () async {
+                      setState(() {
+                        isloading = true;
+                      });
+
+                      final result = await BlockchainService()
+                          .restoreWalletFromMnemonic(
+                              recoveryPhraseTextFiledController.text);
+
+                      if (result == 'NO_IDEA') {
+                        if (kDebugMode) {
+                          print('RECOVERY PHRASE NOT MATCH');
+                        }
+                        setState(() {
+                          isloading = false;
+                        });
+                      } else {
+                        currentWallet.seedHex = result;
+                        setState(() {
+                          isloading = false;
+                        });
+                        await Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => const ProtectWallet(),
+                          ),
+                        );
+                      }
+                    },
+                  )
+                : const Center(
+                    child: CircularProgressIndicator(
+                      color: kPrimaryColor,
+                    ),
                   ),
-                );
-              },
-            ),
           ),
         ],
       ),

@@ -110,7 +110,6 @@ class LegalScreen extends StatelessWidget {
   }
 }
 
-// ignore: camel_case_types
 class customOutlinedButton extends StatelessWidget {
   const customOutlinedButton({
     Key? key,

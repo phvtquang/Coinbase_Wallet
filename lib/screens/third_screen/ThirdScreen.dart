@@ -82,7 +82,6 @@ class ThirdScreen extends StatelessWidget {
   }
 }
 
-// ignore: camel_case_types
 class usernameInputBox extends StatefulWidget {
   const usernameInputBox({
     Key? key,
@@ -92,7 +91,6 @@ class usernameInputBox extends StatefulWidget {
   State<usernameInputBox> createState() => _usernameInputBoxState();
 }
 
-// ignore: camel_case_types
 class _usernameInputBoxState extends State<usernameInputBox> {
   Future<String> checkUser(String username) async {
     try {
@@ -127,7 +125,7 @@ class _usernameInputBoxState extends State<usernameInputBox> {
     if (input == 'UsernameAvailable') {
       return 'Available';
     }
-    return 'LOL';
+    return 'End';
   }
 
   @override
@@ -168,7 +166,7 @@ class _usernameInputBoxState extends State<usernameInputBox> {
                   border: InputBorder.none,
                   filled: true,
                   fillColor: Color.fromARGB(255, 249, 249, 249),
-                  hintText: '@',
+                  hintText: 'Type your username',
                 ),
               ),
               Align(
@@ -179,20 +177,24 @@ class _usernameInputBoxState extends State<usernameInputBox> {
                     onPressed: usernameAvailability == 'UsernameBlank' ||
                             usernameAvailability == 'UsernameExist'
                         ? null
-                        : () async {
+                        : () async {  
                             if (await checkUser(
                                     usernameTextFieldController.text) !=
                                 'UsernameAvailable') {
+                              setState(() {
+                                usernameAvailability = 'UsernameExist';
+                              });
                               return;
+                            } else {
+                              signupUserDetails.username =
+                                  usernameTextFieldController.text;
+                              await Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => const FourthScreen(),
+                                ),
+                              );
                             }
-                            signupUserDetails.username =
-                                usernameTextFieldController.text;
-                            await Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                builder: (context) => const FourthScreen(),
-                              ),
-                            );
                           },
                     style: ElevatedButton.styleFrom(
                       primary: kPrimaryColor,

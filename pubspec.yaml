@@ -45,9 +45,12 @@ dev_dependencies:
   google_fonts: ^2.3.1
   http: ^0.13.4
   lint: ^1.8.2
+  ed25519_hd_key: ^2.2.0
   flutter_lints: ^1.0.0
   firebase_core: ^1.14.0
   web3dart: ^2.3.5
+  ethers: ^0.0.1
+  local_auth: ^2.0.0
   
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

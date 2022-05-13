@@ -1,7 +1,11 @@
+import 'package:bip39/bip39.dart' as bip39;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/screens/backup_screen/backupScreen.dart';
 import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
+import 'package:coinbaseclone/service/BlockchainService.dart';
+import 'package:coinbaseclone/model/WalletDetails.dart';
 import 'package:coinbaseclone/user_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -11,26 +15,6 @@ bool public = true;
 
 class FourthScreen extends StatelessWidget {
   const FourthScreen({Key? key}) : super(key: key);
-
-  Future<void> registerUser(UserDetails user) async {
-    final collectionRef = FirebaseFirestore.instance.collection('userlist');
-    await collectionRef.doc(user.username).set({
-      'btcwallet': '1azxcdwfwcqwqwe',
-      'public': user.public,
-    }).then(
-      (value) {
-        if (kDebugMode) {
-          print('OK');
-        }
-      },
-    ).catchError(
-      (onError) {
-        if (kDebugMode) {
-          print(onError.toString());
-        }
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,25 +90,7 @@ class FourthScreen extends StatelessWidget {
                   // To make space between two button
                   height: MediaQuery.of(context).size.height * 0.04,
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: primaryButton(
-                      insideText: 'Next',
-                      backgroundColor: kPrimaryColor,
-                      buttonHeight: 50,
-                      buttonWidth: MediaQuery.of(context).size.width,
-                      textColor: Colors.white,
-                      press: () async {
-                        signupUserDetails.public = public;
-                        await registerUser(signupUserDetails);
-                        await Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) => const ProtectWallet(),
-                          ),
-                        );
-                      }),
-                ),
+                const createNewUserBtn(),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
                 )
@@ -134,6 +100,64 @@ class FourthScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class createNewUserBtn extends StatefulWidget {
+  const createNewUserBtn({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<createNewUserBtn> createState() => _createNewUserBtnState();
+}
+
+class _createNewUserBtnState extends State<createNewUserBtn> {
+  bool isloading = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return !isloading
+        ? primaryButton(
+            insideText: 'Next',
+            backgroundColor: kPrimaryColor,
+            buttonHeight: 50,
+            buttonWidth: MediaQuery.of(context).size.width,
+            textColor: Colors.white,
+            press: () async {
+              setState(() {
+                isloading = true;
+              });
+
+              // BACKEND
+              signupUserDetails.public = public;
+              final String mnemonic = bip39.generateMnemonic();
+              if (kDebugMode) {
+                print(mnemonic);
+              }
+              newWalletForSignUp.seedHex = bip39.mnemonicToSeedHex(mnemonic);
+              newWalletForSignUp.userName = signupUserDetails.username;
+              signupUserDetails.seed = newWalletForSignUp.seedHex;
+              await BlockchainService()
+                  .createNewWallet(newWalletForSignUp, signupUserDetails);
+              await BlockchainService().createNewUser(signupUserDetails);
+
+              // CREATE DONE
+              setState(() {
+                isloading = false;
+              });
+
+              await Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const ShowRecoveryPhrase(),
+                ),
+              );
+            })
+        : const Center(
+            child: CircularProgressIndicator(
+            color: kPrimaryColor,
+          ));
   }
 }
 
