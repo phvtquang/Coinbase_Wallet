@@ -1,11 +1,10 @@
 import 'package:bip39/bip39.dart' as bip39;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/backup_screen/backupScreen.dart';
-import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
-import 'package:coinbaseclone/service/BlockchainService.dart';
 import 'package:coinbaseclone/model/WalletDetails.dart';
+import 'package:coinbaseclone/screens/backup_screen/ShowRecoveryPhrase.dart';
+import 'package:coinbaseclone/service/BlockchainService.dart';
+import 'package:coinbaseclone/service/CurrentWallet.dart';
 import 'package:coinbaseclone/user_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -90,7 +89,7 @@ class FourthScreen extends StatelessWidget {
                   // To make space between two button
                   height: MediaQuery.of(context).size.height * 0.04,
                 ),
-                const createNewUserBtn(),
+                const CreateNewUserButton(),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
                 )
@@ -103,22 +102,22 @@ class FourthScreen extends StatelessWidget {
   }
 }
 
-class createNewUserBtn extends StatefulWidget {
-  const createNewUserBtn({
+class CreateNewUserButton extends StatefulWidget {
+  const CreateNewUserButton({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<createNewUserBtn> createState() => _createNewUserBtnState();
+  State<CreateNewUserButton> createState() => _CreateNewUserButtonState();
 }
 
-class _createNewUserBtnState extends State<createNewUserBtn> {
+class _CreateNewUserButtonState extends State<CreateNewUserButton> {
   bool isloading = false;
 
   @override
   Widget build(BuildContext context) {
     return !isloading
-        ? primaryButton(
+        ? CustomPrimaryButton(
             insideText: 'Next',
             backgroundColor: kPrimaryColor,
             buttonHeight: 50,
@@ -132,6 +131,7 @@ class _createNewUserBtnState extends State<createNewUserBtn> {
               // BACKEND
               signupUserDetails.public = public;
               final String mnemonic = bip39.generateMnemonic();
+              currentWallet.nmemonic = mnemonic;
               if (kDebugMode) {
                 print(mnemonic);
               }

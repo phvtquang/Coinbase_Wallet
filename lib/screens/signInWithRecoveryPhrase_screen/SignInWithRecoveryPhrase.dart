@@ -106,7 +106,7 @@ class _SignInWithRecoveryPhraseState extends State<SignInWithRecoveryPhrase> {
               bottom: MediaQuery.of(context).size.height * 0.02,
             ),
             child: !isloading
-                ? primaryButton(
+                ? CustomPrimaryButton(
                     insideText: 'Next',
                     backgroundColor: kPrimaryColor,
                     buttonHeight: 50,

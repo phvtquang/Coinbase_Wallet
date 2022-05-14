@@ -1,15 +1,7 @@
-import 'package:coinbaseclone/constant.dart';
 import 'package:coinbaseclone/screens/main_screen/browser_page.dart';
 import 'package:coinbaseclone/screens/main_screen/setting_page.dart';
 import 'package:coinbaseclone/screens/main_screen/walletPage.dart';
-import 'package:coinbaseclone/service/BlockchainService.dart';
-import 'package:coinbaseclone/service/CurrentWallet.dart';
-import 'package:coinbaseclone/service/UserAssets.dart';
-import 'package:ethers/ethers.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:web3dart/web3dart.dart';
 
 //var userAssets = BlockchainService().getAssets(currentWallet.seedHex);
 

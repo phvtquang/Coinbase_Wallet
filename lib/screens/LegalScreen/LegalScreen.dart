@@ -1,6 +1,6 @@
 import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/third_screen/ThirdScreen.dart';
+import 'package:coinbaseclone/screens/PickUserName/PickUsername.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +67,7 @@ class LegalScreen extends StatelessWidget {
           const Spacer(),
           Column(
             children: [
-              customOutlinedButton(
+              CustomOutlinedButton(
                 insideText: 'Terms of Service',
                 buttonWidth: MediaQuery.of(context).size.width * 0.9,
                 buttonHeight: 80,
@@ -75,7 +75,7 @@ class LegalScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.01,
               ),
-              customOutlinedButton(
+              CustomOutlinedButton(
                 insideText: 'Privacy Policy',
                 buttonWidth: MediaQuery.of(context).size.width * 0.9,
                 buttonHeight: 80,
@@ -83,7 +83,7 @@ class LegalScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              primaryButton(
+              CustomPrimaryButton(
                 insideText: 'Accept',
                 backgroundColor: kPrimaryColor,
                 buttonHeight: 50,
@@ -93,7 +93,7 @@ class LegalScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     CupertinoPageRoute(
-                      builder: (context) => const ThirdScreen(),
+                      builder: (context) => const PickUsername(),
                     ),
                   );
                 },
@@ -110,8 +110,8 @@ class LegalScreen extends StatelessWidget {
   }
 }
 
-class customOutlinedButton extends StatelessWidget {
-  const customOutlinedButton({
+class CustomOutlinedButton extends StatelessWidget {
+  const CustomOutlinedButton({
     Key? key,
     required this.insideText,
     required this.buttonHeight,

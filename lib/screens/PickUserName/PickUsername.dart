@@ -6,8 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class ThirdScreen extends StatelessWidget {
-  const ThirdScreen({Key? key}) : super(key: key);
+class PickUsername extends StatelessWidget {
+  const PickUsername({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -75,23 +75,23 @@ class ThirdScreen extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          const usernameInputBox(),
+          const UsernameInputBox(),
         ],
       ),
     );
   }
 }
 
-class usernameInputBox extends StatefulWidget {
-  const usernameInputBox({
+class UsernameInputBox extends StatefulWidget {
+  const UsernameInputBox({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<usernameInputBox> createState() => _usernameInputBoxState();
+  State<UsernameInputBox> createState() => _UsernameInputBoxState();
 }
 
-class _usernameInputBoxState extends State<usernameInputBox> {
+class _UsernameInputBoxState extends State<UsernameInputBox> {
   Future<String> checkUser(String username) async {
     try {
       // Get reference to Firestore collection
@@ -125,7 +125,7 @@ class _usernameInputBoxState extends State<usernameInputBox> {
     if (input == 'UsernameAvailable') {
       return 'Available';
     }
-    return 'End';
+    return 'Sever Error';
   }
 
   @override
@@ -177,7 +177,7 @@ class _usernameInputBoxState extends State<usernameInputBox> {
                     onPressed: usernameAvailability == 'UsernameBlank' ||
                             usernameAvailability == 'UsernameExist'
                         ? null
-                        : () async {  
+                        : () async {
                             if (await checkUser(
                                     usernameTextFieldController.text) !=
                                 'UsernameAvailable') {

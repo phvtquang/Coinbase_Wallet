@@ -1,7 +1,7 @@
 import 'package:coinbaseclone/components/primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/screens/LegalScreen/LegalScreen.dart';
 import 'package:coinbaseclone/screens/restoreWallet_screen/RestoreWalletScreen.dart';
-import 'package:coinbaseclone/screens/second_screen/LegalScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class FirstScreen extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          primaryButton(
+          CustomPrimaryButton(
             buttonHeight: 50,
             buttonWidth: MediaQuery.of(context).size.width * 0.9,
             insideText: 'Create a new wallet',
