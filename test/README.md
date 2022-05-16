@@ -1,6 +1,8 @@
-# E2E Testing with TestProject
+# Testing
 
-## Test Scenario
+## E2E Testing with TestProject
+
+### Scenario
 
 - [Test 1](/test/E2E/recovery_with_phrase)
 
@@ -20,5 +22,24 @@
 
 ![Test 3](/test/E2E/get_random_username_status/Screen%20Shot%202022-05-14%20at%2023.52.21.png)
 
+- [Test 4](/test/E2E/show_transacsion_history_btc/) 
+
+    Description : Restore a wallet and show it's btc transaction
+
+![Test 4](/test/E2E/show_transacsion_history_btc/Screen%20Shot%202022-05-16%20at%2011.42.53%20PM.png)
+
+- [Test 4](/test/E2E/sign_out/) 
+
+    Description : Sign out from current wallet, currently failed, still in fixing progress
+
+![Test 4](/test/E2E/sign_out/Screen%20Shot%202022-05-17%20at%2012.02.28%20AM.png)
 
 
+
+
+Unit test :
+
+- Fetch Username From Firebase
+- Fetch Total Assets Value From Firebase
+
+Widget test :
