@@ -1,7 +1,7 @@
-import 'package:coinbaseclone/components/primary_button.dart';
+import 'package:coinbaseclone/components/custom_primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/backup_screen/manualBackup2.dart';
-import 'package:coinbaseclone/service/CurrentWallet.dart';
+import 'package:coinbaseclone/screens/backup_screen/manual_backup_screen2.dart';
+import 'package:coinbaseclone/service/current_wallet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'components.dart';

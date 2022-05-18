@@ -7,14 +7,6 @@ class Coin {
     required this.change,
     required this.changePercentage,
   });
-
-  String name;
-  String symbol;
-  String imageUrl;
-  num price;
-  num change;
-  num changePercentage;
-
   factory Coin.fromJson(Map<String, dynamic> json) {
     return Coin(
       name: json['name'],
@@ -25,6 +17,13 @@ class Coin {
       changePercentage: json['price_change_percentage_24h'],
     );
   }
+
+  String name;
+  String symbol;
+  String imageUrl;
+  num price;
+  num change;
+  num changePercentage;
 }
 
 List<Coin> coinList = [];

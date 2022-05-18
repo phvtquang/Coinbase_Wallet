@@ -4,16 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
-class pinCodeScreen extends StatefulWidget {
-  const pinCodeScreen({Key? key}) : super(key: key);
+class PincodeScreen extends StatefulWidget {
+  const PincodeScreen({Key? key}) : super(key: key);
 
   @override
-  State<pinCodeScreen> createState() => _pinCodeScreenState();
+  State<PincodeScreen> createState() => _PincodeScreenState();
 }
 
 // ignore: camel_case_types
-class _pinCodeScreenState extends State<pinCodeScreen> {
+class _PincodeScreenState extends State<PincodeScreen> {
   String currentPass = '';
   String rightPass = '000111';
 

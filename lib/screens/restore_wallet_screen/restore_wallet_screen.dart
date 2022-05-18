@@ -1,5 +1,5 @@
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/signInWithRecoveryPhrase_screen/SignInWithRecoveryPhrase.dart';
+import 'package:coinbaseclone/screens/signin_with_recovery_phrase_screen/signin_with_recovery_phrase_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

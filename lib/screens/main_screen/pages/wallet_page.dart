@@ -1,6 +1,6 @@
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/service/BlockchainService.dart';
-import 'package:coinbaseclone/service/CurrentWallet.dart';
+import 'package:coinbaseclone/service/current_wallet.dart';
+import 'package:coinbaseclone/service/fake_blockchain_service.dart';
 import 'package:flutter/material.dart';
 
 class WalletPage extends StatelessWidget {

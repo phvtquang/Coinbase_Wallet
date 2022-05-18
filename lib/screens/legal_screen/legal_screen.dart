@@ -1,6 +1,6 @@
-import 'package:coinbaseclone/components/primary_button.dart';
+import 'package:coinbaseclone/components/custom_primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/PickUserName/PickUsername.dart';
+import 'package:coinbaseclone/screens/pick_username_screen/pick_username_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

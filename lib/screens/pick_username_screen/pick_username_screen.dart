@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/set_privacy/set_privacy.dart';
+import 'package:coinbaseclone/screens/set_privacy_screen/set_privacy_screen.dart';
 import 'package:coinbaseclone/user_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';

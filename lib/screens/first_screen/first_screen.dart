@@ -1,7 +1,8 @@
-import 'package:coinbaseclone/components/primary_button.dart';
+import 'package:coinbaseclone/components/custom_primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/LegalScreen/LegalScreen.dart';
-import 'package:coinbaseclone/screens/restoreWallet_screen/RestoreWalletScreen.dart';
+import 'package:coinbaseclone/screens/legal_screen/legal_screen.dart';
+import 'package:coinbaseclone/screens/restore_wallet_screen/restore_wallet_screen.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -44,23 +45,6 @@ class FirstScreen extends StatelessWidget {
             // space between two buttons
             height: MediaQuery.of(context).size.height * 0.01,
           ),
-          /*
-          primaryButton(
-            buttonHeight: 50,
-            buttonWidth: MediaQuery.of(context).size.width * 0.9,
-            backgroundColor: Colors.white,
-            insideText: "I already have a wallet",
-            textColor: kPrimaryColor,
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const RestoreWallet(),
-                ),
-              );
-            },
-          ),
-          */
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             height: 50,

@@ -1,8 +1,8 @@
-import 'package:coinbaseclone/components/primary_button.dart';
+import 'package:coinbaseclone/components/custom_primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet.dart';
-import 'package:coinbaseclone/service/BlockchainService.dart';
-import 'package:coinbaseclone/service/CurrentWallet.dart';
+import 'package:coinbaseclone/screens/protect_wallet_screen/protect_wallet_screen.dart';
+import 'package:coinbaseclone/service/current_wallet.dart';
+import 'package:coinbaseclone/service/fake_blockchain_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

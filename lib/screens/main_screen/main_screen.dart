@@ -1,6 +1,6 @@
-import 'package:coinbaseclone/screens/main_screen/browser_page.dart';
-import 'package:coinbaseclone/screens/main_screen/setting_page.dart';
-import 'package:coinbaseclone/screens/main_screen/walletPage.dart';
+import 'package:coinbaseclone/screens/main_screen/pages/browser_page.dart';
+import 'package:coinbaseclone/screens/main_screen/pages/setting_page.dart';
+import 'package:coinbaseclone/screens/main_screen/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 
 //var userAssets = BlockchainService().getAssets(currentWallet.seedHex);

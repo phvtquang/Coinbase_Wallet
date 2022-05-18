@@ -1,7 +1,7 @@
-import 'package:coinbaseclone/components/primary_button.dart';
+import 'package:coinbaseclone/components/custom_primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/pin_code_screen/pincode_screen.dart';
-import 'package:coinbaseclone/service/CurrentWallet.dart';
+import 'package:coinbaseclone/screens/pincode_screen/pincode_screen.dart';
+import 'package:coinbaseclone/service/current_wallet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -145,7 +145,7 @@ class ManualBackup2 extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => const pinCodeScreen(),
+                    builder: (context) => const PincodeScreen(),
                   ),
                 );
               } else {}

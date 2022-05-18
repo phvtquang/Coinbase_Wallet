@@ -1,5 +1,5 @@
 import 'package:coinbaseclone/constant.dart';
-import 'package:coinbaseclone/screens/first_screen/FirstScreen.dart';
+import 'package:coinbaseclone/screens/first_screen/first_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

@@ -32,14 +32,12 @@
 
     Description : Sign out from current wallet, currently failed, still in fixing progress
 
-![Test 4](/test/E2E/sign_out/Screen%20Shot%202022-05-17%20at%2012.02.28%20AM.png)
+![Test 4](/test/E2E/sign_out/Screen%20Shot%202022-05-17%20at%2012.02.28%20AM.png) 
 
 
 
 
-Unit test :
+## Unit test :
 
 - Fetch Username From Firebase
 - Fetch Total Assets Value From Firebase
-
-Widget test :
