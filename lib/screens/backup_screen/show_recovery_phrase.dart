@@ -41,12 +41,12 @@ class ShowRecoveryPhrase extends StatelessWidget {
           children: const [
             Icon(
               Icons.warning_rounded,
-              color: Colors.yellow,
+              color: Colors.red,
             ),
             Text(
               'Not backed up',
               style: TextStyle(
-                color: Colors.yellow,
+                color: Colors.red,
               ),
             ),
           ],
@@ -165,10 +165,11 @@ class ShowRecoveryPhrase extends StatelessWidget {
           buttonWidth: MediaQuery.of(context).size.width * 0.9,
           textColor: kPrimaryColor,
           press: () {
-            Navigator.push(
+            Navigator.pushAndRemoveUntil(
               context,
               CupertinoPageRoute<void>(
                   builder: (context) => const ManualBackup()),
+              ModalRoute.withName('/Home'),
             );
           },
         ),

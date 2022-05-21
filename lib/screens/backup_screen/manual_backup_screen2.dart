@@ -151,6 +151,9 @@ class ManualBackup2 extends StatelessWidget {
               } else {}
             },
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.025,
+          ),
         ],
       ),
     );
