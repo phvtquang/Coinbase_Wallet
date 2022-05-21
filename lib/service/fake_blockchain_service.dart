@@ -93,10 +93,10 @@ class BlockchainService {
 
     for (int i = 0; i < coinSymbolList.length; i++) {
       final Coins coins = Coins();
-      coins.name = coinSymbolList[i];
       final snapshot = await seedHexDocumentRef.doc(coinSymbolList[i]).get();
-      //coins.address = await snapshot.get('address');
-      coins.balance = await snapshot.get('balance');
+      coins
+        ..name = coinSymbolList[i]
+        ..balance = await snapshot.get('balance');
       userAssets.listUsersCoins.add(coins);
     }
     return userAssets;
