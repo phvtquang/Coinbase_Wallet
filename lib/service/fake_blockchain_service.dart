@@ -65,11 +65,11 @@ class BlockchainService {
       'username': userDetails.username,
     });
 
-    for (int i = 0; i < coinlist.length; i++) {
+    for (int i = 0; i < coinSymbolList.length; i++) {
       await walletsCollectionRef
           .doc(wallet.seedHex)
           .collection('assets')
-          .doc(coinlist[i])
+          .doc(coinSymbolList[i])
           .set({
         'address': getRandomString(30),
         'balance': 0.0,
@@ -86,15 +86,15 @@ class BlockchainService {
   final walletsCollectionRef = FirebaseFirestore.instance.collection('wallets');
 
   Future<UserAssets> getAssets(String? seedHex) async {
-    UserAssets userAssets = UserAssets();
+    final UserAssets userAssets = UserAssets();
 
     final seedHexDocumentRef =
         walletsCollectionRef.doc(seedHex).collection('assets');
 
-    for (int i = 0; i < coinlist.length; i++) {
-      Coins coins = Coins();
-      coins.name = coinlist[i];
-      var snapshot = await seedHexDocumentRef.doc(coinlist[i]).get();
+    for (int i = 0; i < coinSymbolList.length; i++) {
+      final Coins coins = Coins();
+      coins.name = coinSymbolList[i];
+      final snapshot = await seedHexDocumentRef.doc(coinSymbolList[i]).get();
       //coins.address = await snapshot.get('address');
       coins.balance = await snapshot.get('balance');
       userAssets.listUsersCoins.add(coins);
@@ -114,7 +114,7 @@ class BlockchainService {
     final docSnapshot = await docRef.get();
 
     if (docSnapshot.exists) {
-      Map<String, dynamic>? data = docSnapshot.data();
+      final Map<String, dynamic>? data = docSnapshot.data();
       final username = data?['username'];
       return username;
     } else {
@@ -135,8 +135,8 @@ class BlockchainService {
     // reference to assets in that specific wallet
     final assetRef = docRef.collection('assets');
 
-    for (int i = 0; i < coinlist.length; i++) {
-      final docSnapshot = await assetRef.doc(coinlist[i]).get();
+    for (int i = 0; i < coinSymbolList.length; i++) {
+      final docSnapshot = await assetRef.doc(coinSymbolList[i]).get();
       if (docSnapshot.exists) {
         final Map<String, dynamic>? data = docSnapshot.data();
         final balance = data?['balance'];

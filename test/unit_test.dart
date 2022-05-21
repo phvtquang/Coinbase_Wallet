@@ -16,7 +16,7 @@ void main() {
     );
     final String seed = BlockchainService().convertMnemonicToSeedHex(
         'inside laundry split decide piano pen turtle warrior situate ivory wrestle quick');
-    var result = await BlockchainService().getUsername(seed);
+    final result = await BlockchainService().getUsername(seed);
     expect(result, 'oopapa');
   });
 
@@ -31,7 +31,7 @@ void main() {
     );
     final String seed = BlockchainService().convertMnemonicToSeedHex(
         'inside laundry split decide piano pen turtle warrior situate ivory wrestle quick');
-    var result = await BlockchainService().getAssets(seed);
+    final result = await BlockchainService().getAssets(seed);
     expect(result, 100.214);
   });
 }

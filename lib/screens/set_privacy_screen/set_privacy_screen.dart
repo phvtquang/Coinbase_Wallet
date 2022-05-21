@@ -138,6 +138,7 @@ class _CreateNewUserButtonState extends State<CreateNewUserButton> {
               newWalletForSignUp.seedHex = bip39.mnemonicToSeedHex(mnemonic);
               newWalletForSignUp.userName = signupUserDetails.username;
               signupUserDetails.seed = newWalletForSignUp.seedHex;
+              currentWallet.seedHex = newWalletForSignUp.seedHex;
               await BlockchainService()
                   .createNewWallet(newWalletForSignUp, signupUserDetails);
               await BlockchainService().createNewUser(signupUserDetails);

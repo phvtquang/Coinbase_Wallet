@@ -25,5 +25,3 @@ class Coin {
   num change;
   num changePercentage;
 }
-
-List<Coin> coinList = [];

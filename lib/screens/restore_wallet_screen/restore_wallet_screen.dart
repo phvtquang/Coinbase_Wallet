@@ -41,7 +41,7 @@ class RestoreWallet extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * 0.025,
+                    left: MediaQuery.of(context).size.width * 0.05,
                   ),
                   child: const Text(
                     'Restore wallet',
@@ -56,7 +56,7 @@ class RestoreWallet extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * 0.025,
+                    left: MediaQuery.of(context).size.width * 0.05,
                     bottom: MediaQuery.of(context).size.height * 0.04,
                   ),
                   child: const Text(
@@ -120,7 +120,7 @@ class RestoreWallet extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.03,
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
             ],
           )

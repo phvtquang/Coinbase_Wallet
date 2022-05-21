@@ -1,4 +1,6 @@
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/model/coin.dart';
+import 'package:coinbaseclone/service/coingecko/api.dart';
 import 'package:coinbaseclone/service/current_wallet.dart';
 import 'package:coinbaseclone/service/fake_blockchain_service.dart';
 import 'package:flutter/material.dart';
@@ -47,12 +49,14 @@ class MainTab extends StatefulWidget {
 class _MainTabState extends State<MainTab> {
   late Future<String> futureUsername;
   late Future<double> futureTotalAssets;
+  late Future<List<Coin>> futureCoinlist;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
+    futureCoinlist = fetchCoin();
     futureUsername = BlockchainService().getUsername(currentWallet.seedHex);
     futureTotalAssets =
         BlockchainService().getWalletTotalAssets(currentWallet.seedHex);
@@ -189,12 +193,20 @@ class _MainTabState extends State<MainTab> {
           ),
         ),
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: const Offset(0, 3), // changes position of shadow
+              ),
+            ],
           ),
           height: MediaQuery.of(context).size.height * 0.559,
           width: MediaQuery.of(context).size.width * 0.95,
@@ -242,43 +254,96 @@ class _MainTabState extends State<MainTab> {
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: 20,
                             ),
-                            const Text('ACTIONS'),
-                            ListView.builder(
-                              itemBuilder: (context, index) {
-                                return const ListTile(
+                            const Text('  ACTIONS'),
+                            ListView(
+                              shrinkWrap: true,
+                              padding: const EdgeInsets.all(0),
+                              physics: const NeverScrollableScrollPhysics(),
+                              children: const [
+                                ListTile(
                                   leading: CircleAvatar(
-                                    backgroundColor: Colors.amber,
+                                    backgroundColor: kPrimaryColor,
+                                    child: Icon(
+                                      Icons.shopping_bag,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                   title: Text('Buy, transfer or convert'),
                                   subtitle: Text('From Coinbase or else where'),
-                                );
-                              },
-                              shrinkWrap: true,
-                              itemCount: 2,
-                              padding: const EdgeInsets.all(0),
-                              physics: const NeverScrollableScrollPhysics(),
-                            ),
-                            const Text('BALANCE'),
-                            ListView.builder(
-                              itemBuilder: (context, index) {
-                                return const ListTile(
+                                ),
+                                ListTile(
                                   leading: CircleAvatar(
-                                    backgroundColor: Colors.amber,
+                                    backgroundColor: kPrimaryColor,
+                                    child: Icon(
+                                      Icons.label,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                  title: Text('Bitcoin'),
-                                  subtitle: Text('BTC'),
-                                );
-                              },
-                              shrinkWrap: true,
-                              itemCount: 10,
-                              padding: const EdgeInsets.all(0),
-                              physics: const NeverScrollableScrollPhysics(),
+                                  title: Text('Earn interest on you crypto'),
+                                  subtitle: Text('Up to 12.9% APR'),
+                                ),
+                              ],
                             ),
+                            const Text('  BALANCE'),
+                            FutureBuilder<List<Coin>>(
+                              future: futureCoinlist,
+                              builder: (context, snapshot) {
+                                if (snapshot.hasData) {
+                                  return ListView.builder(
+                                    itemCount: 30,
+                                    shrinkWrap: true,
+                                    padding: const EdgeInsets.all(0),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    itemBuilder: (context, index) {
+                                      return ListTile(
+                                        leading: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              snapshot.data![index].imageUrl),
+                                          backgroundColor: Colors.transparent,
+                                        ),
+                                        title: Text(snapshot.data![index].name),
+                                        subtitle: Text(
+                                          snapshot.data![index].symbol
+                                              .toUpperCase(),
+                                        ),
+                                        trailing: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            Text(
+                                              '\$${snapshot.data![index].price}',
+                                              style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              '${snapshot.data![index].changePercentage.toString()}%',
+                                              style: TextStyle(
+                                                color: snapshot.data![index]
+                                                            .changePercentage >
+                                                        0
+                                                    ? Colors.green
+                                                    : Colors.red,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  );
+                                }
+                                return const Center(
+                                    child: CircularProgressIndicator());
+                              },
+                            )
                           ],
                         ),
                       ),
                       Container(
-                        color: Colors.yellow,
+                        color: Colors.white,
                       ),
                     ],
                   ),
