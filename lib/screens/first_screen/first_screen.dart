@@ -35,7 +35,7 @@ class FirstScreen extends StatelessWidget {
             press: () {
               Navigator.push(
                 context,
-                CupertinoPageRoute(
+                CupertinoPageRoute<void>(
                   builder: (context) => const LegalScreen(),
                 ),
               );
@@ -52,7 +52,7 @@ class FirstScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  CupertinoPageRoute(
+                  CupertinoPageRoute<void>(
                     builder: (context) => const RestoreWallet(),
                   ),
                 );

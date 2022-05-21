@@ -93,12 +93,12 @@ class ProtectWallet extends StatelessWidget {
               height: 80,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                      builder: (context) => const PincodeScreen(),
-                    ),
-                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      CupertinoPageRoute<void>(
+                        builder: (context) => const PincodeScreen(),
+                      ),
+                      ModalRoute.withName('/Home'));
                 },
                 style: OutlinedButton.styleFrom(
                   elevation: 0,

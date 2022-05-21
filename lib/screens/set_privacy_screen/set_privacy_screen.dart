@@ -150,7 +150,7 @@ class _CreateNewUserButtonState extends State<CreateNewUserButton> {
 
               await Navigator.push(
                 context,
-                CupertinoPageRoute(
+                CupertinoPageRoute<void>(
                   builder: (context) => const ShowRecoveryPhrase(),
                 ),
               );

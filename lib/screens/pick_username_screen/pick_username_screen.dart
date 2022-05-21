@@ -190,7 +190,7 @@ class _UsernameInputBoxState extends State<UsernameInputBox> {
                                   usernameTextFieldController.text;
                               await Navigator.push(
                                 context,
-                                CupertinoPageRoute(
+                                CupertinoPageRoute<void>(
                                   builder: (context) => const FourthScreen(),
                                 ),
                               );

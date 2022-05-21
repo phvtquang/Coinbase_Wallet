@@ -167,7 +167,8 @@ class ShowRecoveryPhrase extends StatelessWidget {
           press: () {
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => const ManualBackup()),
+              CupertinoPageRoute<void>(
+                  builder: (context) => const ManualBackup()),
             );
           },
         ),

@@ -89,7 +89,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -113,7 +113,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -138,7 +138,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -166,7 +166,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -190,7 +190,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -214,7 +214,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -238,7 +238,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -266,7 +266,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -290,7 +290,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
@@ -314,7 +314,7 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           if (currentPass.length == 6) {
                             Navigator.push(
                               context,
-                              CupertinoPageRoute(
+                              CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),

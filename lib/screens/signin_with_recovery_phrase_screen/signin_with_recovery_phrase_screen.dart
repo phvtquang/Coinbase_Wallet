@@ -135,7 +135,7 @@ class _SignInWithRecoveryPhraseState extends State<SignInWithRecoveryPhrase> {
                         });
                         await Navigator.push(
                           context,
-                          CupertinoPageRoute(
+                          CupertinoPageRoute<void>(
                             builder: (context) => const ProtectWallet(),
                           ),
                         );

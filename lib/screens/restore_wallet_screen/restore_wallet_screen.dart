@@ -100,7 +100,7 @@ class RestoreWallet extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      CupertinoPageRoute(
+                      CupertinoPageRoute<void>(
                         builder: (context) => const SignInWithRecoveryPhrase(),
                       ),
                     );

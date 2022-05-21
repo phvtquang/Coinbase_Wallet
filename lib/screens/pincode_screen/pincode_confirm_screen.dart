@@ -92,14 +92,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -119,14 +119,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -146,14 +146,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -177,14 +177,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -204,14 +204,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -231,14 +231,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -258,14 +258,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -289,14 +289,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -316,14 +316,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );
@@ -343,14 +343,14 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                         if (currentPass == rightPass) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
                           );
                         } else if (currentPass.length == 6) {
                           Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
                           );

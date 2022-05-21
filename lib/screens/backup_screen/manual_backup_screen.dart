@@ -161,7 +161,7 @@ class ManualBackup extends StatelessWidget {
             press: () {
               Navigator.push(
                 context,
-                CupertinoPageRoute(
+                CupertinoPageRoute<void>(
                   builder: (context) => const ManualBackup2(),
                 ),
               );

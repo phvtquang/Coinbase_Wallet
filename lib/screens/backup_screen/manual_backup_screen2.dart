@@ -134,7 +134,7 @@ class ManualBackup2 extends StatelessWidget {
                   mnemonicInput += listOfTextFieldControllrer[i].text;
                 } else {
                   mnemonicInput =
-                      mnemonicInput + ' ' + listOfTextFieldControllrer[i].text;
+                      '$mnemonicInput ${listOfTextFieldControllrer[i].text}';
                 }
               }
               if (kDebugMode) {
@@ -144,7 +144,7 @@ class ManualBackup2 extends StatelessWidget {
               if (mnemonicInput == currentWallet.nmemonic) {
                 Navigator.push(
                   context,
-                  CupertinoPageRoute(
+                  CupertinoPageRoute<void>(
                     builder: (context) => const PincodeScreen(),
                   ),
                 );
