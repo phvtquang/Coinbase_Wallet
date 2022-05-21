@@ -90,18 +90,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -117,18 +119,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -144,18 +148,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -175,18 +181,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -202,18 +210,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -229,18 +239,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -256,18 +268,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -287,18 +301,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -314,18 +330,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });
@@ -341,18 +359,20 @@ class _PincodeScreenConfirmState extends State<PincodeScreenConfirm> {
                           print(currentPass);
                         }
                         if (currentPass == rightPass) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const MainScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         } else if (currentPass.length == 6) {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             CupertinoPageRoute<void>(
                               builder: (context) => const PincodeScreen(),
                             ),
+                            ModalRoute.withName('/Home'),
                           );
                         }
                       });

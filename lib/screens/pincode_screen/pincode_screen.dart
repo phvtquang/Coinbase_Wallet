@@ -87,13 +87,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -111,13 +112,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -136,13 +138,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                           }
 
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -164,13 +167,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -188,13 +192,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -212,13 +217,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -236,13 +242,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -264,13 +271,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -288,13 +296,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },
@@ -312,13 +321,14 @@ class _PincodeScreenState extends State<PincodeScreen> {
                             print(currentPass);
                           }
                           if (currentPass.length == 6) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               CupertinoPageRoute<void>(
                                 builder: (context) => PincodeScreenConfirm(
                                   rP: currentPass,
                                 ),
                               ),
+                              ModalRoute.withName('/Home'),
                             );
                           }
                         },

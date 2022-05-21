@@ -1,9 +1,9 @@
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/model/user_details.dart';
 import 'package:coinbaseclone/model/wallet_details.dart';
 import 'package:coinbaseclone/service/user_assets.dart';
-import 'package:coinbaseclone/user_details.dart';
 import 'package:coinbaseclone/utils/randomStringGenerator.dart';
 import 'package:flutter/foundation.dart';
 

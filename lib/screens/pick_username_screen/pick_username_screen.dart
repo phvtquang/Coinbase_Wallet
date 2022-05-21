@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/model/user_details.dart';
 import 'package:coinbaseclone/screens/set_privacy_screen/set_privacy_screen.dart';
-import 'package:coinbaseclone/user_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -188,12 +188,12 @@ class _UsernameInputBoxState extends State<UsernameInputBox> {
                             } else {
                               signupUserDetails.username =
                                   usernameTextFieldController.text;
-                              await Navigator.push(
-                                context,
-                                CupertinoPageRoute<void>(
-                                  builder: (context) => const FourthScreen(),
-                                ),
-                              );
+                              await Navigator.pushAndRemoveUntil(
+                                  context,
+                                  CupertinoPageRoute<void>(
+                                    builder: (context) => const FourthScreen(),
+                                  ),
+                                  ModalRoute.withName('/Home'));
                             }
                           },
                     style: ElevatedButton.styleFrom(

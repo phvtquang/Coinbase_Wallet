@@ -1,11 +1,11 @@
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:coinbaseclone/components/custom_primary_button.dart';
 import 'package:coinbaseclone/constant.dart';
+import 'package:coinbaseclone/model/user_details.dart';
 import 'package:coinbaseclone/model/wallet_details.dart';
 import 'package:coinbaseclone/screens/backup_screen/show_recovery_phrase.dart';
 import 'package:coinbaseclone/service/current_wallet.dart';
 import 'package:coinbaseclone/service/fake_blockchain_service.dart';
-import 'package:coinbaseclone/user_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -148,11 +148,12 @@ class _CreateNewUserButtonState extends State<CreateNewUserButton> {
                 isloading = false;
               });
 
-              await Navigator.push(
+              await Navigator.pushAndRemoveUntil(
                 context,
                 CupertinoPageRoute<void>(
                   builder: (context) => const ShowRecoveryPhrase(),
                 ),
+                ModalRoute.withName('/Home'),
               );
             })
         : const Center(

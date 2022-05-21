@@ -133,11 +133,12 @@ class _SignInWithRecoveryPhraseState extends State<SignInWithRecoveryPhrase> {
                         setState(() {
                           isloading = false;
                         });
-                        await Navigator.push(
+                        await Navigator.pushAndRemoveUntil(
                           context,
                           CupertinoPageRoute<void>(
                             builder: (context) => const ProtectWallet(),
                           ),
+                          ModalRoute.withName('/Home'),
                         );
                       }
                     },
